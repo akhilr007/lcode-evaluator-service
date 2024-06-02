@@ -86,3 +86,10 @@ npm install --save-dev eslint-plugin-simple-import-sort
     "lint:fix": "eslint . --ext .ts --fix"
 }
 ```
+
+11. To install ioredis and bullmyq
+
+```bash
+npm i bullmq ioredis
+npm i -D @types/node
+```
