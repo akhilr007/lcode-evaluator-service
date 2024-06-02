@@ -30,7 +30,7 @@
         "quotes": ["error", "double"], // Enforce the consistent use of single quotes
         "indent": ["error", 4], // Enforce consistent indentation (2 spaces)
         "comma-dangle": ["error", "never"], // Disallow trailing commas
-        "space-before-function-paren": ["error", "never"], // Disallow space before function parentheses
+        // "space-before-function-paren": ["error", "never"], // Disallow space before function parentheses
         "keyword-spacing": ["error", { "before": true, "after": true }], // Enforce consistent spacing before and after keywords
 
         // ECMAScript 6
