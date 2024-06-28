@@ -1,5 +1,6 @@
 import { Job } from "bullmq";
 
+import logger from "../config/loggerConfig";
 import { IBullMQJob } from "../interfaces/IBullMqJob";
 
 class SampleJob implements IBullMQJob {
@@ -12,16 +13,16 @@ class SampleJob implements IBullMQJob {
     }
 
     handle = (job?: Job) => {
-        console.log("Handler of the job called");
-        console.log(this.payload);
+        logger.info("Handler of the job called");
+        logger.info(this.payload);
 
         if (job) {
-            console.log(job.name, job.id, job.data);
+            logger.info(job.name, job.id, job.data);
         }
     };
 
     failed = (job?: Job) => {
-        console.log("Job Failed", job?.id);
+        logger.error("Job Failed", job?.id);
     };
 }
 

@@ -1,6 +1,7 @@
 import { Redis } from "ioredis";
 
 import { IRedisConfig } from "../interfaces/IRedisConfig";
+import logger from "./loggerConfig";
 import ServerConfig from "./serverConfig";
 
 const redisConfig: IRedisConfig = {
@@ -12,7 +13,7 @@ const redisConfig: IRedisConfig = {
 const redisConnection = new Redis(redisConfig);
 
 redisConnection.on("error", (error) => {
-    console.log("Redis connection error", error);
+    logger.error("Redis connection error", error);
 });
 
 export default redisConnection;
