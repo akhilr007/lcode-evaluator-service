@@ -1,5 +1,6 @@
 import { Job, Worker } from "bullmq";
 
+import logger from "../config/loggerConfig";
 import redisConnection from "../config/redisConfig";
 import SampleJob from "../jobs/sampleJob";
 
@@ -19,7 +20,7 @@ function sampleWorker(queueName: string) {
     );
 
     worker.on("error", (error) => {
-        console.error("Worker error:", error);
+        logger.error("Worker error:", error);
     });
 }
 
